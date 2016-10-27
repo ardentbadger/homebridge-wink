@@ -12,6 +12,7 @@ RUN BUILD_PACKAGES='curl git build-essential python' && \
   npm cache clean && rm -rf && \
   apt-get remove --purge -y $BUILD_PACKAGES  && \
   rm -rf /var/lib/apt/lists/*
+USER root
 COPY config.json /root/.homebridge
 EXPOSE 5353 51826
 COPY run.sh /homebridge/run.sh
